@@ -14,24 +14,24 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Ambil data dari Intent
+        // Ambil data dari intent
         val title = intent.getStringExtra("title")
+        val originalTitle = intent.getStringExtra("originalTitle")
         val releaseDate = intent.getStringExtra("releaseDate")
         val description = intent.getStringExtra("description")
         val pages = intent.getIntExtra("pages", 0)
         val cover = intent.getStringExtra("cover")
 
-        // Tampilkan ke layout
-        binding.txtDetailTitle.text = title ?: "No Title"
-        binding.txtDetailRelease.text = "Release: ${releaseDate ?: "-"}"
+        // Set data ke view
+        binding.txtDetailTitle.text = title ?: "-"
+        binding.txtDetailOriginalTitle.text = originalTitle ?: "-"
+        binding.txtDetailRelease.text = "Release Date: ${releaseDate ?: "-"}"
+        binding.txtDetailDesc.text = description ?: "-"
         binding.txtDetailPages.text = "Pages: $pages"
-        binding.txtDetailDesc.text = description ?: "No Description"
 
-        // Load Cover Image
+        // Load Cover Full Width
         Glide.with(this)
             .load(cover)
-            .placeholder(R.drawable.ic_launcher_background)
-            .error(R.drawable.ic_launcher_foreground)
             .into(binding.imgDetailCover)
     }
 }

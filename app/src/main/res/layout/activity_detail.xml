@@ -1,88 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <!-- HEADER FIX DI ATAS -->
+    <TextView
+        android:id="@+id/tvDetailHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:text="Book Detail"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:background="#4CAF50"
+        android:textColor="@android:color/black" />
 
-        <!-- Header -->
-        <TextView
-            android:id="@+id/tvHpb"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Book Detail"
-            android:background="#4CAF50"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="24sp"
-            android:padding="16dp" />
+    <!-- SCROLLVIEW UNTUK KONTEN -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <!-- Content Wrapper -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="24dp">
+            android:orientation="vertical">
 
-            <!-- Buku Cover -->
+            <!-- COVER FULL WIDTH + PADDING -->
             <ImageView
                 android:id="@+id/imgDetailCover"
-                android:layout_width="180dp"
-                android:layout_height="260dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/ic_launcher_background"/>
-
-            <!-- Title -->
-            <TextView
-                android:id="@+id/txtDetailTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:text="Title" />
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="0dp" />
 
-            <!-- Original Title -->
-            <TextView
-                android:id="@+id/txtDetailOriginalTitle"
-                android:layout_width="wrap_content"
+            <!-- CONTENT DENGAN PADDING -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="Original Title"
-                android:layout_marginTop="4dp" />
+                android:orientation="vertical"
+                android:padding="20dp">
 
-            <!-- Release Date -->
-            <TextView
-                android:id="@+id/txtDetailRelease"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Release Date"
-                android:layout_marginTop="6dp" />
+                <TextView
+                    android:id="@+id/txtDetailTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:text="Title" />
 
-            <!-- Pages -->
-            <TextView
-                android:id="@+id/txtDetailPages"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pages"
-                android:layout_marginTop="6dp" />
+                <TextView
+                    android:id="@+id/txtDetailOriginalTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Original Title" />
 
-            <!-- Description -->
-            <TextView
-                android:id="@+id/txtDetailDesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description"
-                android:layout_marginTop="10dp"
-                android:paddingEnd="8dp" />
+                <TextView
+                    android:id="@+id/txtDetailRelease"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Release Date" />
 
+                <TextView
+                    android:id="@+id/txtDetailDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Description" />
+
+                <TextView
+                    android:id="@+id/txtDetailPages"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pages" />
+
+            </LinearLayout>
         </LinearLayout>
+    </ScrollView>
 
-    </LinearLayout>
-
-</ScrollView>
+</LinearLayout>

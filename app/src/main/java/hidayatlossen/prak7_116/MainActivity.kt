@@ -51,14 +51,17 @@ class MainActivity : AppCompatActivity() {
                     val books = response.body() ?: emptyList()
 
                     adapter = BookAdapter(books) { book ->
-                        // click event
                         val intent = Intent(this@MainActivity, DetailActivity::class.java).apply {
                             putExtra("title", book.title)
+                            putExtra("originalTitle", book.originalTitle)
                             putExtra("releaseDate", book.releaseDate)
+                            putExtra("description", book.description)
+                            putExtra("pages", book.pages)
                             putExtra("cover", book.cover)
                         }
                         startActivity(intent)
                     }
+
 
                     binding.rvBooks.adapter = adapter
                 }
