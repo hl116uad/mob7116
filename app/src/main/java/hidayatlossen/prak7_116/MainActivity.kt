@@ -50,7 +50,15 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val books = response.body() ?: emptyList()
 
-                    adapter = BookAdapter(books)
+                    adapter = BookAdapter(books) { book ->
+                        // click event
+                        val intent = Intent(this@MainActivity, DetailActivity::class.java).apply {
+                            putExtra("title", book.title)
+                            putExtra("releaseDate", book.releaseDate)
+                            putExtra("cover", book.cover)
+                        }
+                        startActivity(intent)
+                    }
 
                     binding.rvBooks.adapter = adapter
                 }

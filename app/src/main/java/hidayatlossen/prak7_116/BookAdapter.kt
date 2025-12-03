@@ -8,6 +8,7 @@ import hidayatlossen.prak7_116.databinding.ItemBookBinding
 
 class BookAdapter(
     private var list: List<Book>,
+    private val onClick: (Book) -> Unit
 ) : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 //        TODO("Not yet implemented")
@@ -37,6 +38,10 @@ class BookAdapter(
                 .load(book.cover)   // URL dari API
                 .centerCrop()       // biar rapi sesuai ImageView
                 .into(binding.ivGambar)
+
+            binding.root.setOnClickListener {
+                onClick(book)
+            }
         }
 
         }
