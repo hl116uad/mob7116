@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- HEADER FIX DI ATAS -->
     <TextView
         android:id="@+id/tvDetailHeader"
         android:layout_width="match_parent"
@@ -16,7 +15,6 @@
         android:background="#4CAF50"
         android:textColor="@android:color/black" />
 
-    <!-- SCROLLVIEW UNTUK KONTEN -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -26,7 +24,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- COVER FULL WIDTH + PADDING -->
             <ImageView
                 android:id="@+id/imgDetailCover"
                 android:layout_width="match_parent"
@@ -38,7 +35,6 @@
                 android:paddingRight="16dp"
                 android:paddingBottom="0dp" />
 
-            <!-- CONTENT DENGAN PADDING -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

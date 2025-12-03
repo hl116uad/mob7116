@@ -14,7 +14,6 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Ambil data dari intent
         val title = intent.getStringExtra("title")
         val originalTitle = intent.getStringExtra("originalTitle")
         val releaseDate = intent.getStringExtra("releaseDate")
@@ -22,14 +21,12 @@ class DetailActivity : AppCompatActivity() {
         val pages = intent.getIntExtra("pages", 0)
         val cover = intent.getStringExtra("cover")
 
-        // Set data ke view
         binding.txtDetailTitle.text = title ?: "-"
         binding.txtDetailOriginalTitle.text = originalTitle ?: "-"
         binding.txtDetailRelease.text = "Release Date: ${releaseDate ?: "-"}"
         binding.txtDetailDesc.text = description ?: "-"
         binding.txtDetailPages.text = "Pages: $pages"
 
-        // Load Cover Full Width
         Glide.with(this)
             .load(cover)
             .into(binding.imgDetailCover)

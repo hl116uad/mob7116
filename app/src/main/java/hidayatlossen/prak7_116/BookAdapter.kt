@@ -35,8 +35,8 @@ class BookAdapter(
             binding.txtRelease.text = book.releaseDate ?: "Unknown Release Date"
 
             Glide.with(binding.ivGambar.context)
-                .load(book.cover)   // URL dari API
-                .centerCrop()       // biar rapi sesuai ImageView
+                .load(book.cover)
+                .centerCrop()
                 .into(binding.ivGambar)
 
             binding.root.setOnClickListener {
